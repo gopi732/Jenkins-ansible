@@ -14,7 +14,7 @@
   - name: delete docker image
     command: "{{ item }}"
     with_items:
-    - "docker rmi duvvaraghavendra/simple-devops-image:latest"
+    - "docker rmi saigopi123456/simple-devops-image:latest"
     - "docker rmi simple-devops-image:latest"
     ignore_errors: yes
   - name: building docker image
