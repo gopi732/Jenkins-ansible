@@ -1,6 +1,6 @@
 ---
 - hosts: node
-  remote_user: duvva
+  remote_user: gopi
   connection: ssh
   gather_facts: yes
  
@@ -20,7 +20,7 @@
   - name: building docker image
     command: "docker build --no-cache -t simple-devops-image ." 
     args:
-      chdir: /home/duvva/.jenkins/workspace/jenkins-ansible_main
+      chdir: /home/gopi/.jenkins/workspace/jenkins-ansible_main
     environment:
       http_proxy: http://127.0.0.1:3128/
       https_proxy: http://127.0.0.1:3128/
@@ -30,10 +30,10 @@
     command: docker run -d --name simple-devops-container -p 8085:8080 simple-devops-image
   - name: Log into DockerHub
     docker_login:
-      username: duvvaraghavendra
-      password: dckr_pat_1EV_Xk-LWrUiU7HrqBrx3bNBVsE
+      username: saigopi123456
+      password: cc5ae0e2-efe3-420c-9b51-694d36a8d1d4
   - name: Tag and push to docker hub
     docker_image:
       name: simple-devops-image
-      repository: duvvaraghavendra/simple-devops-image
+      repository: saigopi123456/simple-devops-image
       push: yes
