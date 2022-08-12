@@ -1,2 +1,2 @@
 [node]
-localhost ansible_ssh_user=duvva 
+localhost ansible_ssh_user=gopi 
