@@ -25,7 +25,7 @@ pipeline {
       }
       steps {
          withSonarQubeEnv('Sonar') {
-            sh "mvn clean verify install sonar:sonar -Dsonar.projectKey=mavenproject \
+            sh "mvn clean verify install sonar:sonar -Dsonar.projectKey=Maven \
 		 -Dsonar.java.coveragePlugin=jacoco \
                  -Dsonar.jacoco.reportPaths=target/jacoco.exec \
     	         -Dsonar.junit.reportsPaths=target/surefire-reports"
