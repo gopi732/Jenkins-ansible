@@ -1,9 +1,5 @@
 pipeline {
   agent any
-  tools {
-      maven 'Maven'
-      jdk 'JAVA_HOME'
-  }
   stages { 
     stage('CleanUp WorkSpace & Git Checkout') {
       steps {
