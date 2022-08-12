@@ -24,7 +24,7 @@ pipeline {
 	       scannerHome = tool 'SonarQube Scanner'
       }
       steps {
-         withSonarQubeEnv('admin') {
+         withSonarQubeEnv('Sonar') {
             sh "mvn clean verify install sonar:sonar -Dsonar.projectKey=mavenproject \
 		 -Dsonar.java.coveragePlugin=jacoco \
                  -Dsonar.jacoco.reportPaths=target/jacoco.exec \
@@ -40,12 +40,12 @@ pipeline {
     stage('Deploy Atrifacts') {
 	  steps {
 	      rtUpload (
-		 serverId: 'JFrog',
+		 serverId: 'admin',
 		 spec: '''{
  			"files" :[
 			  {
 		            "pattern": "target/*.war",
-		            "target": "maven/"
+		            "target": "Maven/"
 	         	  }
 		        ]
 		 }'''
